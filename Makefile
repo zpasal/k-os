@@ -3,6 +3,12 @@ CFLAGS = -fno-common -O0 \
 	 -mcpu=cortex-m3 -mthumb \
 	 -T ldscripts/kernel.ld -nostartfiles \
 
+SRC=src
+C_SOURCES=$(wildcard $(SRC)/*.c)
+S_SOURCES=$(wildcard $(SRC)/*.s)
+OBJECTS=$(patsubst $(SRC)/%.c, $(OBJ)/%.o, $(C_OURCES))
+
+
 NAME=k-os
 ELF=dist/$(NAME).elf
 BIN=dist/$(NAME).bin
@@ -10,7 +16,7 @@ LST=dist/$(NAME).list
 
 all: $(BIN)
 
-$(BIN): src/k-os.c src/startup.c src/context.s src/usart.c
+$(BIN): $(C_SOURCES) $(S_SOURCES)
 	mkdir -p dist
 	$(CC) $(CFLAGS) $^ -o $(ELF)
 	arm-none-eabi-objcopy -Obinary $(ELF) $(BIN)
