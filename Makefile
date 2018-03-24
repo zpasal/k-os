@@ -10,7 +10,7 @@ LST=dist/$(NAME).list
 
 all: $(BIN)
 
-$(BIN): src/k-os.c src/startup.c src/context.s
+$(BIN): src/k-os.c src/startup.c src/context.s src/usart.c
 	mkdir -p dist
 	$(CC) $(CFLAGS) $^ -o $(ELF)
 	arm-none-eabi-objcopy -Obinary $(ELF) $(BIN)
