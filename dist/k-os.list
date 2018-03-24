@@ -78,7 +78,7 @@ Disassembly of section .text:
   aa:	3718      	adds	r7, #24
   ac:	46bd      	mov	sp, r7
   ae:	bd80      	pop	{r7, pc}
-  b0:	00000311 	.word	0x00000311
+  b0:	00000312 	.word	0x00000312
   b4:	20000000 	.word	0x20000000
   b8:	20000000 	.word	0x20000000
   bc:	20000000 	.word	0x20000000
@@ -334,8 +334,8 @@ Disassembly of section .text:
  2f4:	73615420 	.word	0x73615420
  2f8:	0a31206b 	.word	0x0a31206b
  2fc:	00000000 	.word	0x00000000
- 300:	20534f4b 	.word	0x20534f4b
- 304:	72617453 	.word	0x72617453
- 308:	676e6974 	.word	0x676e6974
- 30c:	0a2e2e2e 	.word	0x0a2e2e2e
-	...
+ 300:	534f2d4b 	.word	0x534f2d4b
+ 304:	61745320 	.word	0x61745320
+ 308:	6e697472 	.word	0x6e697472
+ 30c:	2e2e2e67 	.word	0x2e2e2e67
+ 310:	000a      	.short	0x000a
